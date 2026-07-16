@@ -21,6 +21,13 @@
 
 **Step 3:** 把观察结果用于约束国际化改写，不把测试特例写成叙事。
 
+**Baseline observations:**
+
+- 当前交接场景基本能区分“代码已落地”和“尚未验证”，但缺少稳定的默认路径规则，并加入了未从项目证据得出的安全检查项。
+- 长期同步场景把尚未决定、未完成、未验证的 PostgreSQL 迁移写入架构文档；新版必须明确禁止把此类计划中信息写入长期文档。
+- 阶段存档场景能先保留已完成阶段，但自行扩写了退款业务规则和实现步骤；新版必须要求从现有文件和用户决定提取内容，不得编造下一阶段范围。
+- 阶段存档应先保存已完成阶段，再把当前 handoff 更新为下一阶段，避免归档文件错误记录未来状态。
+
 ### Task 2: 创建开源 Skill 内容
 
 **Files:**
@@ -69,7 +76,7 @@
 **Step 1:** 运行 Skill 结构校验。
 
 ```powershell
-python C:\Users\ASUS\.codex\skills\.system\skill-creator\scripts\quick_validate.py skills/context-handoff-keeper
+python "$env:CODEX_HOME\skills\.system\skill-creator\scripts\quick_validate.py" skills/context-handoff-keeper
 ```
 
 Expected: 输出有效 Skill 的成功结果。

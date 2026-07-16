@@ -1,0 +1,5 @@
+interface:
+  display_name: "Context Handoff Keeper"
+  short_description: "Create focused handoffs and durable project context"
+  default_prompt: "Use $context-handoff-keeper to wrap up this development session and prepare the smallest evidence-based continuation package."
+
