@@ -46,9 +46,6 @@ Install interactively for any supported agent:
 npx skills add Enzo19150326743/context-handoff-keeper
 ```
 
-> [!NOTE]
-> The GitHub repository must be public before these commands can download the skill.
-
 ## Use
 
 Invoke the skill explicitly:

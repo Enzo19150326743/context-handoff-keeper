@@ -46,9 +46,6 @@ npx skills add Enzo19150326743/context-handoff-keeper `
 npx skills add Enzo19150326743/context-handoff-keeper
 ```
 
-> [!NOTE]
-> GitHub 仓库公开后，上述命令才能从网络下载这个 Skill。
-
 ## 使用方法
 
 显式调用：
