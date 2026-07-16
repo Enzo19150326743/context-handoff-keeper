@@ -1,22 +1,34 @@
 # Context Handoff Keeper
 
-Create small, evidence-based development handoffs that another coding agent can continue safely.
+**Context windows fill up. Features finish. The next coding agent should not have to guess what happened.**
+
+Context Handoff Keeper turns “what I did last session” into “what the next session should do,” grounded in the repository so a fresh coding agent can continue without reconstructing the work from scratch.
 
 [简体中文](README.zh-CN.md)
 
+## Built for session-sized development
+
+Use it at two common development boundaries:
+
+- **The context window is getting full.** Capture the current truth before a long conversation becomes the only place that remembers it.
+- **One feature-sized session is complete.** Close out what changed, record what is still unverified, and give the next session one clear starting task.
+
+The result is not a transcript. It is a compact continuation point: what the previous session changed, what remains unfinished or unverified, what the next agent should read first, and what it should do next.
+
 ## Highlights
 
-- **Focused continuation:** Record only the state, files, decisions, risks, and next step needed to resume work.
+- **Previous session, captured:** Record what changed, what was decided, and what remains uncertain.
+- **Next session, focused:** Give the next coding agent one priority task and an observable completion condition.
 - **Durable context gate:** Keep tentative, unverified, and task-local information out of architecture and project-context documents.
 - **Clean history:** Reuse one current handoff by default and create dated snapshots only for explicitly requested milestones.
 - **Safe collection:** Never start tests or services just to write a handoff, and never copy secrets or raw sensitive logs into documentation.
 - **Repository-aware:** Reuse existing documentation conventions before falling back to sensible default paths.
 
-## Why this skill exists
+## Why I built this
 
-Long development conversations accumulate decisions, partial changes, unverified work, and temporary plans. A generic summary often mixes those states together, while a full transcript is too noisy for the next agent.
+I prefer to give each coding session one focused feature when possible. When that feature is done—or the context window is nearly full—I want to start a fresh session without losing the decisions, unfinished work, and verification status from the previous one.
 
-Context Handoff Keeper separates current task state from durable project knowledge. It creates a compact continuation entry point and updates long-term documentation only when a fact is confirmed, stable, project-relevant, and genuinely new.
+Dragging an overloaded conversation forward is noisy. Starting a new session with no handoff makes the next agent rediscover the same files and decisions. This skill creates the middle path: a short, evidence-based handoff that says what happened last session and what should happen next, while promoting only confirmed, durable facts into long-term project documentation.
 
 ## Install
 
@@ -42,15 +54,19 @@ npx skills add Enzo19150326743/context-handoff-keeper
 Invoke the skill explicitly:
 
 ```text
-Use $context-handoff-keeper to wrap up this development session and prepare the next agent to continue.
+Use $context-handoff-keeper because this context window is getting full. Record what changed, what is still unverified, and what the next session should do first.
 ```
 
 ```text
-Use $context-handoff-keeper to update project context, but only if this session introduced stable project-wide facts.
+Use $context-handoff-keeper to close out this completed feature and prepare the next session to work on <next-feature>.
 ```
 
 ```text
 Use $context-handoff-keeper to preserve this completed milestone, then prepare the current handoff for the next phase.
+```
+
+```text
+Use $context-handoff-keeper to update project context, but only if this session introduced stable project-wide facts.
 ```
 
 The skill can also trigger when a request mentions handoff, session wrap-up, context compression, project context, architecture documentation, `交接`, `收口`, or similar terms.
@@ -110,4 +126,3 @@ skills/context-handoff-keeper/
 ```
 
 The skill is instruction-only and has no runtime dependencies.
-
