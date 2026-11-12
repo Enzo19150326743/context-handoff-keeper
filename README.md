@@ -1,3 +1,5 @@
+> 本 Skill 的最新版本已迁移至 [Enzo的Skill](https://github.com/Enzo19150326743/Enzo-Skills)，请查看「Vibe Coding 必备 Skill」分类。本仓库归档保留历史版本。
+
 # Context Handoff Keeper
 
 **Context windows fill up. Features finish. The next coding agent should not have to guess what happened.**
